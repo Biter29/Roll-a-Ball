@@ -19,4 +19,12 @@ public class Ball : MonoBehaviour {
 
         rb.AddForce(movement*speed);
      }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
